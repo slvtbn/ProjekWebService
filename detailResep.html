@@ -1,49 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="#" />
 
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
-        integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+      integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
     <title>Meal Plan Website</title>
-    <link rel="stylesheet" href="css/style.css">
-</head>
+    <link rel="stylesheet" href="./css/style.css" />
+  </head>
 
-<body>
+  <body>
     <!-- navigasi -->
     <nav>
-        <a href="#" class="logo">
-            <img src="images/healthy-logonav.png">
-        </a>
-        <ul class="menu-bar">
-            <li><a href="#">Beranda</a></li>
-            <li><a href="#">Meal</a></li>
-            <li><a href="#">Plan</a></li>
-            <li><a href="#">Order</a></li>
-        </ul>
+      <a href="#" class="logo">
+        <img src="./images/healthy-logonav.png" />
+      </a>
+      <ul class="menu-bar">
+        <li><a href="#">Beranda</a></li>
+        <li><a href="#">Meal</a></li>
+        <li><a href="#">Plan</a></li>
+        <li><a href="#">Order</a></li>
+      </ul>
     </nav>
 
     <div class="dashboard">
-        <div class="head-resep"></div>
+      <div class="head-resep"></div>
 
-        <div class="title-resep">
-            <h2>Instructions</h2>
-            <h2>Ingredients</h2>
-        </div>
+      <div class="title-resep">
+        <h2>Instructions</h2>
+        <h2>Ingredients</h2>
+      </div>
 
-        <div class="body-resep">
-            <div class="instruction">
-            </div>
-            <div class="ingredients">
-            </div>
-        </div>
+      <div class="body-resep">
+        <div class="instruction"></div>
+        <div class="ingredients"></div>
+      </div>
     </div>
+  </body>
+  <script src="./js/detail.js"></script>
+  <!-- <script>
+    const apiKey = '9af7d2491eaa4bd79109956a28795233';
+    const baseUrl = 'https://api.spoonacular.com/';
 
-</body>
-<script src="js/script.js"></script>
+    const content = document.querySelector('#list-product');
+    const fetchHeader = {
+      headers: {
+        'x-api-key': apiKey,
+      },
+    };
 
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const params = Object.fromEntries(urlSearchParams.entries());
+    // console.log('aaa', params);
+
+    let url = `${baseUrl}recipes/${params.id}/information`;
+    fetch(url, fetchHeader)
+      .then((response) => response.json())
+      .then((resJson) => {
+        console.log(resJson);
+        let headResep = `
+                <div class="dashboard-resep">
+                    <img src="${resJson.image}" alt="">
+                    <div class="resep-title">
+                        <h2><mark class="mark">${resJson.title}</mark></h2>
+                    </div>
+                </div>
+
+                <div class="detail-resep">
+                    <h1>Discover a new recipe every ${resJson.readyInMinutes} minutes</h1>
+                    <h6>Health Score : ${resJson.healthScore}</h6>
+                </div>
+            `;
+
+        let bahan = '';
+        resJson.extendedIngredients.forEach((ingredients) => {
+          console.log(ingredients);
+          bahan += `<p>${ingredients.name.toUpperCase()}</p>`;
+        });
+
+        let step = `${resJson.instructions}`;
+        console.log(resJson.instructions);
+
+        document.querySelector('.head-resep').innerHTML = headResep;
+        const bodyResep = document.querySelector('.body-resep');
+
+        bodyResep.querySelector('.ingredients').innerHTML = bahan;
+        bodyResep.querySelector('.instruction').innerHTML = step;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  </script> -->
 </html>

@@ -191,8 +191,8 @@ a {
 }
 
 .dashboard img:hover {
-     box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.15);
-     cursor: pointer;
+    box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
 }
 
 .detail-resep {
@@ -203,11 +203,11 @@ a {
     color: #26bf87;
 }
 
-.detail-resep h6{
+.detail-resep h6 {
     color: black;
 }
 
-.resep-title{
+.resep-title {
     position: absolute;
     top: 55%;
     left: -18%;
@@ -217,7 +217,8 @@ a {
     line-height: 45px;
 }
 
-.body-resep, .title-resep {
+.body-resep,
+.title-resep {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -230,12 +231,12 @@ a {
     color: #26bf87;
 }
 
-.mark{
+.mark {
     background-color: #26bf87;
     padding: 8px 0;
 }
 
-.instruction{
+.instruction {
     /* background-color: salmon; */
     width: 60%;
     font-size: 20px;
@@ -246,7 +247,7 @@ a {
     padding: 10px;
 }
 
-.ingredients{
+.ingredients {
     background-color: #f2f2f2;
     width: 30%;
     height: max-content;
@@ -254,4 +255,3 @@ a {
     border-radius: 8px;
     box-shadow: 10px 10px 30px rgba(0, 0, 0, 0.04);
 }
-
